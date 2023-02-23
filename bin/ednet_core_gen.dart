@@ -1,4 +1,4 @@
-library dartling_gen;
+library ednet_core_gen;
 
 import 'dart:io';
 import 'package:ednet_core/ednet_core.dart';
@@ -8,15 +8,15 @@ part 'lib_gen.dart';
 part 'test_gen.dart';
 part 'web_gen.dart';
 
-String? libraryName;
-String? domainName;
-String? modelName;
+late String libraryName;
+late String domainName;
+late String modelName;
 
-Repository dartlingRepository;
-Domain dartlingDomain;
-Model dartlingModel;
+late Repository dartlingRepository;
+late Domain dartlingDomain;
+late Model dartlingModel;
 
-String modelJson;
+late String modelJson;
 
 String firstLetterToUpper(String text) {
   return '${text[0].toUpperCase()}${text.substring(1)}';
@@ -75,11 +75,11 @@ void genReadme(File file) {
   var text = '';
   text = '${text}# ${domainName}_${modelName} \n';
   text = '${text}\n';
-  text = '${text}**Categories**: dartling, class models. \n';
+  text = '${text}**Categories**: ednet_core, class models. \n';
   text = '${text}\n';
   text = '${text}## Description: \n';
   text = '${text}${domainName}_${modelName} project uses \n';
-  text = '${text}[dartling] (https://github.com/dzenanr/dartling) for the model.';
+  text = '${text}[EDNetCore] (https://github.com/ednet-dev/ednet_core) for the model.';
   addText(file, text);
 }
 
@@ -89,17 +89,17 @@ void genPubspec(File file) {
 name: ${domainName}_${modelName}
 version: 0.0.1
 author: Your Name
-description: ${domainName}_${modelName} application that uses dartling for its model.
+description: ${domainName}_${modelName} application that uses ednet_core for its model.
 homepage: http://ondart.me/
 environment:
   sdk: ^1.10.0
 documentation:
 dependencies:
   browser: any
-  dartling:
-    git: https://github.com/dzenanr/dartling.git
-  dartling_default_app:
-    git: https://github.com/dzenanr/dartling_default_app.git
+  ednet_core:
+    git: https://github.com/ednet-dev/ednet_core.git
+  ednet_core_default_app:
+    git: https://github.com/dzenanr/ednet_core_default_app.git
   ''';
   addText(file, text);
 }
@@ -110,15 +110,15 @@ void genPubspec(File file) {
 name: ${domainName}_${modelName}
 version: 0.0.1
 author: Your Name
-description: ${domainName}_${modelName} application that uses dartling for its model.
+description: ${domainName}_${modelName} application that uses ednet_core for its model.
 homepage: http://ondart.me/
 environment:
   sdk: ^1.10.0
 documentation:
 dependencies:
   browser: any
-  dartling: any
-  dartling_default_app: any
+  ednet_core: any
+  ednet_core_default_app: any
   ''';
   addText(file, text);
 }
@@ -171,13 +171,13 @@ void main(List<String> args) {
     domainName =  domainName.toLowerCase();
     modelName = modelName.toLowerCase();
     if (domainName == modelName) {
-      throw new DartlingError('domain and model names must be different');
+      throw new EDNetException('domain and model names must be different');
     }
     if (domainName == 'domain') {
-      throw new DartlingError('domain cannot be the domain name');
+      throw new EDNetException('domain cannot be the domain name');
     }
     if (modelName == 'model') {
-      throw new DartlingError('model cannot be the model name');
+      throw new EDNetException('model cannot be the model name');
     }
     libraryName = '${domainName}_${modelName}';
     createDomainModel(args[1]); // project path as argument

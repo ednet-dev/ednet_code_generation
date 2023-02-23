@@ -1,4 +1,4 @@
-## Version history of [dartling_gen](https://github.com/dzenanr/dartling_gen)
+## Version history of [EDNetCoreGen](https://github.com/ednet-dev/ednet_core_gen)
 
 based on [Semantic Versioning](http://semver.org/)
 
@@ -8,12 +8,12 @@ based on [Semantic Versioning](http://semver.org/)
 
 *2.0.1* 2015-04-24
 
-+ add .pub to .gitignore gen in bin/dartling_gen.dart
-+ update pubspec gen in bin/dartling_gen.dart
++ add .pub to .gitignore gen in bin/ednet_core_gen.dart
++ update pubspec gen in bin/ednet_core_gen.dart
 
 *2.0.0* 2014-03-19
 
-+ update pubspec.yaml to dartling and dartling_default_app on GitHub
++ update pubspec.yaml to dartling and ednet_core_default_app on GitHub
 + gen doc/pubspec.txt file and doc/specific_changes folder
 + create var for the model's data json
 + create var for each entry's data json

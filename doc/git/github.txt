@@ -1,4 +1,4 @@
-github.txt for dartling_gen
+github.txt for ednet_core_gen
 
 GitHub, Git
 
@@ -30,17 +30,17 @@ http://help.github.com/create-a-repo/
 
 Create a New Repo at GitHub
 (without README, since cloning will not be used).
-Repository Name: dartling_gen
+Repository Name: ednet_core_gen
 Description:
   dartling model generator.
 
 Next steps:
-  cd git/dart/model/dartling_gen
+  cd git/dart/model/ednet_core_gen
   git init
   git status
   git add .
   git commit -m 'initial version'
-  git remote add origin https://github.com/dzenanr/dartling_gen.git
+  git remote add origin https://github.com/ednet-dev/ednet_core_gen.git
   git push -u origin master
 
 -------------------------------------------------------------------------------
@@ -50,14 +50,14 @@ Git with Git Bash
 Clone a remote repository into a local repository.
 
 cd git/dart/model
-git clone https://github.com/dzenanr/dartling_gen.git
-cd dartling_gen
+git clone https://github.com/ednet-dev/ednet_core_gen.git
+cd ednet_core_gen
 
 Read+Write:
-https://github.com/dzenanr/dartling_gen.git
+https://github.com/ednet-dev/ednet_core_gen.git
 
 Read only:
-git://github.com/dzenanr/dartling_gen.git
+git://github.com/dzenanr/ednet_core_gen.git
 
 Get the latest changes from the remote repository
 
@@ -69,7 +69,7 @@ git pull origin master
 
 Work with a local repository
 
-cd git/dart/model/dartling_gen
+cd git/dart/model/ednet_core_gen
 
 git status
 

@@ -1,6 +1,6 @@
 Launch arguments
 
-https://github.com/dzenanr/dartling_gen
+https://github.com/ednet-dev/ednet_core_gen
 
 Social Blogging
 
@@ -13,22 +13,22 @@ Design the blogging model in Model Concepts and generate its JSON version.
 Copy the JSON representation from Model Concepts and paste it into the 
 model.json file.
 
-Open dartling_gen in Dart Editor.
+Open ednet_core_gen in Dart Editor.
 
 In the Run menu open Manage Launches.
 
 Remove existing launches.
 
-Select bin/dartling_gen.dart.
+Select bin/ednet_core_gen.dart.
 
-Click on the right mouse button then Run bin/dartling_gen.dart.
+Click on the right mouse button then Run bin/ednet_core_gen.dart.
 
-dartling_gen.dart console message: 
+ednet_core_gen.dart console message:
 arguments are not entered properly in Run/Manage Launches of Dart Editor
 
 In the Run menu open Manage Launches.
 
-Select the dartling_gen.dart command-line launch.
+Select the ednet_core_gen.dart command-line launch.
 
 In the Script arguments enter the following four arguments:
 

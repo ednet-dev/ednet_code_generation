@@ -1,11 +1,11 @@
-part of dartling_gen;
+part of ednet_core_gen;
 
 void genDomainModelGen(File file) {
-  addText(file, genDartlingGen(dartlingModel));
+  addText(file, genEDNetGen(dartlingModel));
 }
 
 void genDomainModelTest(File file, Concept entryConcept) {
-  addText(file, genDartlingTest(dartlingRepository, dartlingModel, entryConcept));
+  addText(file, genEDNetTest(dartlingRepository, dartlingModel, entryConcept));
 }
 
 void genTest(String path, Model dartlingModel) {

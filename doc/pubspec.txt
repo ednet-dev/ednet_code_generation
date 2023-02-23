@@ -1,10 +1,10 @@
 pubspec.yaml
 
-name: dartling_gen
+name: ednet_core_gen
 version: 2.0.2
 description: Generate a new dartling project.
 author: Dzenan Ridjanovic <dzenanr@gmail.com>
-homepage: https://github.com/dzenanr/dartling_gen
+homepage: https://github.com/ednet-dev/ednet_core_gen
 documentation: http://goo.gl/Fd08zZ
 environment:
   sdk: '>=1.10.0 <2.0.0'
@@ -18,7 +18,7 @@ dependencies:
   
 ?
   dartling:
-    git: 'https://github.com/dzenanr/dartling.git'
+    git: 'https://github.com/ednet-dev/ednet_core.git'
 ? 
   
 dependencies:
@@ -37,4 +37,4 @@ dependencies:
 
 -----------------------------------------------------------------
     
-No need for a pub version of dartling_gen.
+No need for a pub version of ednet_core_gen.

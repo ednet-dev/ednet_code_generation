@@ -1,11 +1,11 @@
-part of dartling_gen;
+part of ednet_core_gen;
 
 void genDomainModelLibrary(File file) {
-  addText(file, genDartlingLibrary(dartlingModel));
+  addText(file, genEDNetLibrary(dartlingModel));
 }
 
 void genDomainModelAppLibrary(File file) {
-  addText(file, genDartlingLibraryApp(dartlingModel));
+  addText(file, genEDNetLibraryApp(dartlingModel));
 }
 
 void genDartlingRepository(File file) {

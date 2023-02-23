@@ -4,15 +4,15 @@
 
 ## Description
 
-A [dartling](http://pub.dartlang.org/packages/dartling) project based on a model
+A [EDNetCore](http://pub.dartlang.org/packages/dartling) project based on a model
 done in [Model Concepts](https://github.com/dzenanr/model_concepts) is generated.
 
 The json representation of a model designed in Model Concepts must be copied in
 the model.json file in the project directory.
 
 In the Run/Manage Launches of Dart Editor, enter the four arguments in the
-Script arguments of the dartling_gen.dart command-line launch
-with the bin/dartling_gen.dart Dart script:
+Script arguments of the ednet_core_gen.dart command-line launch
+with the bin/ednet_core_gen.dart Dart script:
 
 --genall projectpath domain model
 
@@ -25,12 +25,12 @@ or
 --genall /home/dr/dart/demo_projects demo projects
 --genall /home/dzenanr/dart/model/category_links category links
 
-By running the main function in the bin/dartling_gen.dart file,
+By running the main function in the bin/ednet_core_gen.dart file,
 a project, with its demo domain and projects model, 
 will be generated in the project directory.
 
 The dependencies in the pubspec.yaml file are on the last versions of
-dartling and dartling_default_app on GitHub.
+dartling and ednet_core_default_app on GitHub.
 You should have git installed on your computer and Dart Editor should be
 able to find 
 [where](https://docs.google.com/document/d/1qFQvvqBkIpvfp3T3vFonRAGb4RLUIFu3w8cxh2j0sVg/edit?usp=sharing).
@@ -56,18 +56,18 @@ and generate its JSON version.
 Copy the JSON representation from Model Concepts and 
 paste it into the model.json file.
 
-Open dartling_gen in Dart Editor.
+Open ednet_core_gen in Dart Editor.
 
-Select bin/dartling_gen.dart.
+Select bin/ednet_core_gen.dart.
 
-Click on the right mouse button then Run bin/dartling_gen.dart.
+Click on the right mouse button then Run bin/ednet_core_gen.dart.
 
-dartling_gen.dart console message:
+ednet_core_gen.dart console message:
 arguments are not entered properly in Run/Manage Launches of Dart Editor
 
 In the Run menu open Manage Launches.
 
-Select the dartling_gen.dart command-line launch.
+Select the ednet_core_gen.dart command-line launch.
 
 In the Script arguments enter the following four arguments:
 
