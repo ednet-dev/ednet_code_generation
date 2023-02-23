@@ -70,7 +70,7 @@ After creating an account, create a remote repository.
 
 http://help.github.com/create-a-repo/
 
-Create a New Repo at GitHub
+Create a New Repository at GitHub
 (without README, since cloning will not be used).
 Repository Name: ${domainName}_${modelName}
 Description:

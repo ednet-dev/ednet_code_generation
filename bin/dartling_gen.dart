@@ -8,11 +8,11 @@ part 'lib_gen.dart';
 part 'test_gen.dart';
 part 'web_gen.dart';
 
-String libraryName;
-String domainName;
-String modelName;
+String? libraryName;
+String? domainName;
+String? modelName;
 
-Repo dartlingRepository;
+Repository dartlingRepository;
 Domain dartlingDomain;
 Model dartlingModel;
 
@@ -151,7 +151,7 @@ void createDomainModel(String projectPath) {
   if (modelJson.length == 0) {
     print('missing json of the model');
   } else {
-    dartlingRepository = new Repo();
+    dartlingRepository = new Repository();
     dartlingDomain = new Domain(firstLetterToUpper(domainName));
     dartlingModel = fromJsonToModel(modelJson, dartlingDomain, 
         firstLetterToUpper(modelName));
