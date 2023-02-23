@@ -1,7 +1,7 @@
 library dartling_gen;
 
 import 'dart:io';
-import 'package:dartling/dartling.dart';
+import 'package:ednet_core/ednet_core.dart';
 
 part 'doc_gen.dart';
 part 'lib_gen.dart';
