@@ -1,14 +1,14 @@
 part of ednet_core_gen;
 
 void genDomainModelGen(File file) {
-  addText(file, genEDNetGen(dartlingModel));
+  addText(file, genEDNetGen(ednetCoreModel));
 }
 
 void genDomainModelTest(File file, Concept entryConcept) {
-  addText(file, genEDNetTest(dartlingRepository, dartlingModel, entryConcept));
+  addText(file, genEDNetTest(ednetCoreRepository, ednetCoreModel, entryConcept));
 }
 
-void genTest(String path, Model dartlingModel) {
+void genTest(String path, Model ednetCoreModel) {
   var testPath = '${path}/test';
   genDir(testPath);
 
@@ -20,7 +20,7 @@ void genTest(String path, Model dartlingModel) {
   File domainModelGen =
       genFile('${modelPath}/${domainName}_${modelName}_gen.dart');
   genDomainModelGen(domainModelGen);
-  for (Concept entryConcept in dartlingModel.entryConcepts) {
+  for (Concept entryConcept in ednetCoreModel.entryConcepts) {
     File domainModelTest =
         genFile('${modelPath}/${domainName}_${modelName}_'
                 '${entryConcept.codeLowerUnderscore}_test.dart');

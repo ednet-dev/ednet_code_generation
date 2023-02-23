@@ -12,9 +12,9 @@ late String libraryName;
 late String domainName;
 late String modelName;
 
-late Repository dartlingRepository;
-late Domain dartlingDomain;
-late Model dartlingModel;
+late Repository ednetCoreRepository;
+late Domain ednetCoreDomain;
+late Model ednetCoreModel;
 
 late String modelJson;
 
@@ -129,7 +129,7 @@ void genProject(String gen, String projectPath) {
     genDir(projectPath);
     genDoc(projectPath);
     genLib(gen, projectPath);
-    genTest(projectPath, dartlingModel);
+    genTest(projectPath, ednetCoreModel);
     genWeb(projectPath);
     File gitignore = genFile('${projectPath}/.gitignore');
     genGitignore(gitignore);
@@ -151,11 +151,11 @@ void createDomainModel(String projectPath) {
   if (modelJson.length == 0) {
     print('missing json of the model');
   } else {
-    dartlingRepository = new Repository();
-    dartlingDomain = new Domain(firstLetterToUpper(domainName));
-    dartlingModel = fromJsonToModel(modelJson, dartlingDomain, 
+    ednetCoreRepository = new Repository();
+    ednetCoreDomain = new Domain(firstLetterToUpper(domainName));
+    ednetCoreModel = fromJsonToModel(modelJson, ednetCoreDomain, 
         firstLetterToUpper(modelName));
-    dartlingRepository.domains.add(dartlingDomain);
+    ednetCoreRepository.domains.add(ednetCoreDomain);
   }
 }
 

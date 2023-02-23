@@ -1,31 +1,31 @@
 part of ednet_core_gen;
 
 void genDomainModelLibrary(File file) {
-  addText(file, genEDNetLibrary(dartlingModel));
+  addText(file, genEDNetLibrary(ednetCoreModel));
 }
 
 void genDomainModelAppLibrary(File file) {
-  addText(file, genEDNetLibraryApp(dartlingModel));
+  addText(file, genEDNetLibraryApp(ednetCoreModel));
 }
 
 void genDartlingRepository(File file) {
-  addText(file, genRepository(dartlingRepository, libraryName));
+  addText(file, genRepository(ednetCoreRepository, libraryName));
 }
 
 void genDartlingModels(File file) {
-  addText(file, genModels(dartlingDomain, libraryName));
+  addText(file, genModels(ednetCoreDomain, libraryName));
 }
 
 void genDartlingDomain(File file) {
-  addText(file, genDomain(dartlingDomain, libraryName));
+  addText(file, genDomain(ednetCoreDomain, libraryName));
 }
 
 void genDartlingEntries(File file) {
-  addText(file, genEntries(dartlingModel, libraryName));
+  addText(file, genEntries(ednetCoreModel, libraryName));
 }
 
 void genDartlingModel(File file) {
-  addText(file, genModel(dartlingModel, libraryName));
+  addText(file, genModel(ednetCoreModel, libraryName));
 }
 
 void genConceptEntitiesGen(File file, Concept concept) {
@@ -44,7 +44,7 @@ void genJsonData(File file) {
   sc = '${sc} \n';
   sc = '${sc}// lib/${domainName}/${modelName}/json/data.dart \n';
 
-  for (Concept entryConcept in dartlingModel.entryConcepts) {
+  for (Concept entryConcept in ednetCoreModel.entryConcepts) {
     sc = '${sc}var ${domainName}${firstLetterToUpper(modelName)}'
          '${entryConcept.code}Entry = r""" \n';
     sc = '${sc} \n';
@@ -97,7 +97,7 @@ void genAll(String path) {
   genDir(modelPath);
   File model = genFile('${modelPath}/model.dart');
   genDartlingModel(model);
-  for (Concept concept in dartlingModel.concepts) {
+  for (Concept concept in ednetCoreModel.concepts) {
     File conceptEntities =
         genFile('${modelPath}/${concept.codesLowerUnderscore}.dart');
     genConceptEntities(conceptEntities, concept);
@@ -126,7 +126,7 @@ void genGen(String path) {
   genDir(genModelPath);
   File entries = genFile('${genModelPath}/entries.dart');
   genDartlingEntries(entries);
-  for (Concept concept in dartlingModel.concepts) {
+  for (Concept concept in ednetCoreModel.concepts) {
     File conceptEntitiesGen =
         genFile('${genModelPath}/${concept.codesLowerUnderscore}.dart');
     genConceptEntitiesGen(conceptEntitiesGen, concept);

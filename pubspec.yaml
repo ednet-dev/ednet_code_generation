@@ -1,6 +1,6 @@
 name: ednet_core_gen
 version: 2.0.2
-description: Generate a new dartling project.
+description: Generate a new EDNetCore project.
 
 homepage: https://github.com/ednet-dev/ednet_core_gen
 documentation: http://goo.gl/Fd08zZ

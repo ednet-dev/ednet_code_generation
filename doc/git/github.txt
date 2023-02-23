@@ -32,7 +32,7 @@ Create a New Repo at GitHub
 (without README, since cloning will not be used).
 Repository Name: ednet_core_gen
 Description:
-  dartling model generator.
+  EDNetCore model generator.
 
 Next steps:
   cd git/dart/model/ednet_core_gen

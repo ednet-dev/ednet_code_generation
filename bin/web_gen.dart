@@ -1,7 +1,7 @@
 part of ednet_core_gen;
 
 void genDomainModelWeb(File file) {
-  addText(file, genEDNetWeb(dartlingModel));
+  addText(file, genEDNetWeb(ednetCoreModel));
 }
 
 void genDomainModelWebHtml(File file) {

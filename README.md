@@ -1,10 +1,8 @@
-# ![Alt dartling](https://raw.github.com/dzenanr/dartling/master/resources/dartling.png) **gen**
-
-**Categories**: dartling, model, code generation
+**Categories**: ednet_core, model, code generation
 
 ## Description
 
-A [EDNetCore](http://pub.dartlang.org/packages/dartling) project based on a model
+A [EDNetCore](https://pub.dev/packages/ednet_cms) project based on a model
 done in [Model Concepts](https://github.com/dzenanr/model_concepts) is generated.
 
 The json representation of a model designed in Model Concepts must be copied in
@@ -30,7 +28,7 @@ a project, with its demo domain and projects model,
 will be generated in the project directory.
 
 The dependencies in the pubspec.yaml file are on the last versions of
-dartling and ednet_core_default_app on GitHub.
+EDNetCore and ednet_core_default_app on GitHub.
 You should have git installed on your computer and Dart Editor should be
 able to find 
 [where](https://docs.google.com/document/d/1qFQvvqBkIpvfp3T3vFonRAGb4RLUIFu3w8cxh2j0sVg/edit?usp=sharing).
@@ -77,7 +75,7 @@ Click on the Run button to generate the project.
 
 ### More Details
 
-[**dartling: Domain Model Framework**](http://goo.gl/Fd08zZ)
+[**ednet_core: Domain Model Framework**](http://goo.gl/Fd08zZ)
 
 [*Learning Dart*](http://www.packtpub.com/learning-dart/book)
 
