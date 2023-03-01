@@ -124,7 +124,7 @@ void genGen(String path) {
 
   var genModelPath = '${genDomainPath}/${modelName}';
   genDir(genModelPath);
-  File entries = genFile('${genModelPath}/entries.dart');
+  File entries = genFile('${genModelPath}/model_entries.dart');
   genDartlingEntries(entries);
   for (Concept concept in ednetCoreModel.concepts) {
     File conceptEntitiesGen =
