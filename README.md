@@ -8,7 +8,7 @@ done in [Model Concepts](https://github.com/ednet-dev/model_concepts) is generat
 The json representation of a model designed in Model Concepts must be copied in
 the model.json file in the project directory.
 
-In the Run/Manage Launches of Dart Editor, enter the four arguments in the
+In the Run/Manage Launches of IDE, enter the four arguments in the
 Script arguments of the ednet_core_gen.dart command-line launch
 with the bin/ednet_core_gen.dart Dart script:
 
@@ -29,7 +29,7 @@ will be generated in the project directory.
 
 The dependencies in the pubspec.yaml file are on the last versions of
 EDNetCore and ednet_core_default_app on GitHub.
-You should have git installed on your computer and Dart Editor should be
+You should have git installed on your computer and IDE should be
 able to find 
 [where](https://docs.google.com/document/d/1qFQvvqBkIpvfp3T3vFonRAGb4RLUIFu3w8cxh2j0sVg/edit?usp=sharing).
 If you want to change them to paths on your computer or to the Pub of Dart,
@@ -54,14 +54,14 @@ and generate its JSON version.
 Copy the JSON representation from Model Concepts and 
 paste it into the model.json file.
 
-Open ednet_core_gen in Dart Editor.
+Open ednet_core_gen in IDE.
 
 Select bin/ednet_core_gen.dart.
 
 Click on the right mouse button then Run bin/ednet_core_gen.dart.
 
 ednet_core_gen.dart console message:
-arguments are not entered properly in Run/Manage Launches of Dart Editor
+arguments are not entered properly in Run/Manage Launches of IDE
 
 In the Run menu open Manage Launches.
 

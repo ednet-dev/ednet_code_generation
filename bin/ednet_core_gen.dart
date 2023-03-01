@@ -183,6 +183,6 @@ void main(List<String> args) {
     createDomainModel(args[1]); // project path as argument
     genProject(args[0], args[1]);
   } else {
-    print('arguments are not entered properly in Run/Manage Launches of Dart Editor');
+    print('arguments are not entered properly in Run/Manage Launches of IDE');
   }
 }

@@ -13,7 +13,7 @@ Design the blogging model in Model Concepts and generate its JSON version.
 Copy the JSON representation from Model Concepts and paste it into the 
 model.json file.
 
-Open ednet_core_gen in Dart Editor.
+Open ednet_core_gen in IDE.
 
 In the Run menu open Manage Launches.
 
@@ -24,7 +24,7 @@ Select bin/ednet_core_gen.dart.
 Click on the right mouse button then Run bin/ednet_core_gen.dart.
 
 ednet_core_gen.dart console message:
-arguments are not entered properly in Run/Manage Launches of Dart Editor
+arguments are not entered properly in Run/Manage Launches of IDE
 
 In the Run menu open Manage Launches.
 
