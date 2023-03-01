@@ -57,7 +57,7 @@ Read+Write:
 https://github.com/ednet-dev/ednet_core_gen.git
 
 Read only:
-git://github.com/dzenanr/ednet_core_gen.git
+git://github.com/ednet-dev/ednet_core_gen.git
 
 Get the latest changes from the remote repository
 

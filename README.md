@@ -3,7 +3,7 @@
 ## Description
 
 A [EDNetCore](https://pub.dev/packages/ednet_cms) project based on a model
-done in [Model Concepts](https://github.com/dzenanr/model_concepts) is generated.
+done in [Model Concepts](https://github.com/ednet-dev/model_concepts) is generated.
 
 The json representation of a model designed in Model Concepts must be copied in
 the model.json file in the project directory.
@@ -48,7 +48,7 @@ Create the dart/social_blogging folder (domain: social; model: blogging).
 Create the empty model.json file in the folder.
 
 Design the blogging model in 
-[Model Concepts](https://github.com/dzenanr/model_concepts) 
+[Model Concepts](https://github.com/ednet-dev/model_concepts) 
 and generate its JSON version.
 
 Copy the JSON representation from Model Concepts and 

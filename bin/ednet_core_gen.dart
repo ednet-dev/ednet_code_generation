@@ -12,7 +12,7 @@ late String libraryName;
 late String domainName;
 late String modelName;
 
-late Repository ednetCoreRepository;
+late CoreRepository ednetCoreRepository;
 late Domain ednetCoreDomain;
 late Model ednetCoreModel;
 
@@ -99,7 +99,7 @@ dependencies:
   ednet_core:
     git: https://github.com/ednet-dev/ednet_core.git
   ednet_core_default_app:
-    git: https://github.com/dzenanr/ednet_core_default_app.git
+    git: https://github.com/ednet-dev/ednet_core_default_app.git
   ''';
   addText(file, text);
 }
@@ -151,7 +151,7 @@ void createDomainModel(String projectPath) {
   if (modelJson.length == 0) {
     print('missing json of the model');
   } else {
-    ednetCoreRepository = new Repository();
+    ednetCoreRepository = new CoreRepository();
     ednetCoreDomain = new Domain(firstLetterToUpper(domainName));
     ednetCoreModel = fromJsonToModel(modelJson, ednetCoreDomain, 
         firstLetterToUpper(modelName));
