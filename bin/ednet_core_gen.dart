@@ -79,7 +79,7 @@ void genReadme(File file) {
   text = '${text}\n';
   text = '${text}## Description: \n';
   text = '${text}${domainName}_${modelName} project uses \n';
-  text = '${text}[EDNetCore] (https://github.com/ednet-dev/ednet_core) for the model.';
+  text = '${text}[EDNetCore](https://github.com/ednet-dev/ednet_core) for the model.';
   addText(file, text);
 }
 
