@@ -88,14 +88,15 @@ void genPubspec(File file) {
   var text = '''
 name: ${domainName}_${modelName}
 version: 0.0.1
-author: Your Name
+
 description: ${domainName}_${modelName} application that uses ednet_core for its model.
-homepage: http://ondart.me/
+
+homepage: https://ednet.dev/
+
 environment:
-  sdk: ^1.10.0
-documentation:
+  sdk: '>=2.18.6 <3.0.0'
+
 dependencies:
-  browser: any
   ednet_core:
     git: https://github.com/ednet-dev/ednet_core.git
   ednet_core_default_app:
@@ -109,16 +110,20 @@ void genPubspec(File file) {
   var text = '''
 name: ${domainName}_${modelName}
 version: 0.0.1
-author: Your Name
+
 description: ${domainName}_${modelName} application that uses ednet_core for its model.
-homepage: http://ondart.me/
+
+homepage: https://ednet.dev/
+
 environment:
-  sdk: ^1.10.0
-documentation:
+  sdk: '>=2.18.6 <3.0.0'
+  
 dependencies:
-  browser: any
-  ednet_core: any
-  ednet_core_default_app: any
+  ednet_core:
+    path: ../../../packages/ednet_core
+  ednet_core_default_app:
+    path: ../../../../experiments/dartling/ednet_core_default_app
+  
   ''';
   addText(file, text);
 }
