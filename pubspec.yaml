@@ -12,5 +12,5 @@ dependencies:
   test: ^1.22.0
 
   ednet_core:
-    path: ../../../ednet_cms/packages/ednet_core
+    path: ../../cms/packages/ednet_core
 
