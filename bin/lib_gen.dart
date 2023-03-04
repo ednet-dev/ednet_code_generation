@@ -100,7 +100,7 @@ void genAll(String path) {
   for (Concept concept in ednetCoreModel.concepts) {
     File conceptEntities =
         genFile('${modelPath}/${concept.codesLowerUnderscore}.dart');
-    genConceptEntities(conceptEntities, concept);
+    genConceptEntities(conceptEntities, concept!);
   }
 
   var jsonPath = '${modelPath}/json';
@@ -129,7 +129,7 @@ void genGen(String path) {
   for (Concept concept in ednetCoreModel.concepts) {
     File conceptEntitiesGen =
         genFile('${genModelPath}/${concept.codesLowerUnderscore}.dart');
-    genConceptEntitiesGen(conceptEntitiesGen, concept);
+    genConceptEntitiesGen(conceptEntitiesGen, concept!);
   }
 }
 

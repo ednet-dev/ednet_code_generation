@@ -5,7 +5,8 @@ void genDomainModelGen(File file) {
 }
 
 void genDomainModelTest(File file, Concept entryConcept) {
-  addText(file, genEDNetTest(ednetCoreRepository, ednetCoreModel, entryConcept));
+  addText(
+      file, genEDNetTest(ednetCoreRepository, ednetCoreModel, entryConcept));
 }
 
 void genTest(String path, Model ednetCoreModel) {
@@ -21,10 +22,8 @@ void genTest(String path, Model ednetCoreModel) {
       genFile('${modelPath}/${domainName}_${modelName}_gen.dart');
   genDomainModelGen(domainModelGen);
   for (Concept entryConcept in ednetCoreModel.entryConcepts) {
-    File domainModelTest =
-        genFile('${modelPath}/${domainName}_${modelName}_'
-                '${entryConcept.codeLowerUnderscore}_test.dart');
-    genDomainModelTest(domainModelTest, entryConcept);  
+    File domainModelTest = genFile('${modelPath}/${domainName}_${modelName}_'
+        '${entryConcept.codeLowerUnderscore}_test.dart');
+    genDomainModelTest(domainModelTest, entryConcept!);
   }
 }
-
