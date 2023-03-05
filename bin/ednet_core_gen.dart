@@ -75,7 +75,7 @@ void genReadme(File file) {
   var text = '';
   text = '${text}# ${domainName}_${modelName} \n';
   text = '${text}\n';
-  text = '${text}**Categories**: ednet_core, class models. \n';
+  text = '${text}**Categories**: ednet_core, domain models. \n';
   text = '${text}\n';
   text = '${text}## Description: \n';
   text = '${text}${domainName}_${modelName} project uses \n';
