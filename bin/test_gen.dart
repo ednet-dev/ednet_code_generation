@@ -24,6 +24,6 @@ void genTest(String path, Model ednetCoreModel) {
   for (Concept entryConcept in ednetCoreModel.entryConcepts) {
     File domainModelTest = genFile('${modelPath}/${domainName}_${modelName}_'
         '${entryConcept.codeLowerUnderscore}_test.dart');
-    genDomainModelTest(domainModelTest, entryConcept!);
+    genDomainModelTest(domainModelTest, entryConcept);
   }
 }
