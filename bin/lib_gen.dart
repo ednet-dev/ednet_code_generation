@@ -46,16 +46,16 @@ void genJsonData(File file) {
 
   for (Concept entryConcept in ednetCoreModel.entryConcepts) {
     sc = '${sc}var ${domainName}${firstLetterToUpper(modelName)}'
-         '${entryConcept.code}Entry = r""" \n';
+        '${entryConcept.code}Entry = r""" \n';
     sc = '${sc} \n';
     sc = '${sc}"""; \n';
-    sc = '${sc} \n';     
+    sc = '${sc} \n';
   }
-  
+
   sc = '${sc}var ${domainName}${firstLetterToUpper(modelName)}Model = r""" \n';
   sc = '${sc} \n';
   sc = '${sc}"""; \n';
-  sc = '${sc} \n'; 
+  sc = '${sc} \n';
 
   addText(file, sc);
 }
@@ -70,7 +70,7 @@ part of ${domainName}_${modelName};
 // lib/${domainName}/${modelName}/json/model.dart
 
 var ${domainName}${firstLetterToUpper(modelName)}ModelJson = r'''
-${modelJson}
+${modelJson ?? yamlString}
 ''';
   """;
   addText(file, text);
@@ -80,14 +80,14 @@ void genAll(String path) {
   var libPath = '${path}/lib';
   genDir(libPath);
   File repository = genFile('${libPath}/repository.dart');
-    genEDNetCoreRepository(repository);
+  genEDNetCoreRepository(repository);
   File domainModelLibrary =
       genFile('${libPath}/${domainName}_${modelName}.dart');
   genDomainModelLibrary(domainModelLibrary);
   File domainModelAppLibrary =
       genFile('${libPath}/${domainName}_${modelName}_app.dart');
   genDomainModelAppLibrary(domainModelAppLibrary);
-    
+
   var domainPath = '${libPath}/${domainName}';
   genDir(domainPath);
   File domain = genFile('${domainPath}/domain.dart');

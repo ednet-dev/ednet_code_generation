@@ -1,6 +1,8 @@
 library ednet_core_gen;
 
 import 'dart:io';
+import 'package:yaml/yaml.dart';
+
 import 'package:ednet_core/ednet_core.dart';
 
 part 'doc_gen.dart';
@@ -13,13 +15,15 @@ part 'web_gen.dart';
 
 late String libraryName;
 late String domainName;
+late String outputDir;
 late String modelName;
 
 late CoreRepository ednetCoreRepository;
 late Domain ednetCoreDomain;
 late Model ednetCoreModel;
 
-late String modelJson;
+String? modelJson;
+late String yamlString;
 
 String firstLetterToUpper(String text) {
   return '${text[0].toUpperCase()}${text.substring(1)}';
@@ -111,7 +115,7 @@ dependencies:
 */
 
 void genPubspec(File file) {
-  var text = """
+  var text = '''
 name: ${domainName}_${modelName}
 version: 0.0.1
 
@@ -124,13 +128,11 @@ environment:
   
 dependencies:
   ednet_core:
-    # path: ../../../packages/ednet_core
-    path: ../../../ednet/libs/cms/packages/ednet_core
+    path: ../../../packages/ednet_core
   ednet_core_default_app:
-    # path: ../../../../experiments/dartling/ednet_core_default_app
-    path: ../../../ednet/libs/experiments/ednet_core_default_app
+    path: ../../../../experiments/dartling/ednet_core_default_app
   
-  """;
+  ''';
   addText(file, text);
 }
 
@@ -158,24 +160,65 @@ void createDomainModel(String projectPath) {
   var modelJsonFilePath = '${projectPath}/model.json';
   File modelJsonFile = getFile(modelJsonFilePath);
   modelJson = readTextFromFile(modelJsonFile);
-  if (modelJson.length == 0) {
+  if (modelJson == null || modelJson?.length == 0) {
     print('missing json of the model');
   } else {
     ednetCoreRepository = new CoreRepository();
     ednetCoreDomain = new Domain(firstLetterToUpper(domainName));
     ednetCoreModel = fromJsonToModel(
-        modelJson, ednetCoreDomain, firstLetterToUpper(modelName));
+        modelJson ?? '', ednetCoreDomain, firstLetterToUpper(modelName), null);
     ednetCoreRepository.domains.add(ednetCoreDomain);
   }
 }
 
-void main(List<String> args) {
-  // --genall C:/Users/ridjanod/dart/project domain model
-  // --gengen C:/Users/ridjanod/dart/project domain model
+void createDomainModelFromYaml({dir, domain, model}) {
+  yamlString = loadYamlFile(
+    domain: domain,
+    model: model,
+    dir: dir,
+  );
 
-  // --genall /home/dr/dart/project domain model
-  // --gengen /home/dr/dart/project domain model
-  if (args.length == 4 && (args[0] == '--genall' || args[0] == '--gengen')) {
+  final yaml = loadYaml(yamlString);
+
+  if (yaml == null || yaml.length == 0) {
+    print('missing YAML of the ${domain} model ${model}');
+  } else {
+    ednetCoreRepository = new CoreRepository();
+    ednetCoreDomain = new Domain(firstLetterToUpper(domainName));
+    ednetCoreModel = fromJsonToModel(
+        '', ednetCoreDomain, firstLetterToUpper(modelName), yaml);
+    ednetCoreRepository.domains.add(ednetCoreDomain);
+  }
+}
+
+/// --genall ~/projects/project domain model
+/// --gengen ~/projects/project domain model
+/// --gengen ~/projects/project/yaml ~/projects/project_mobile_app/domain domain model1 model2 ...
+void main(List<String> args) {
+  if (args.length >= 5 && (args[0] == '--genall' || args[0] == '--gengen')) {
+    domainName = args[3];
+    outputDir = args[2];
+    domainName = domainName.toLowerCase();
+    if (domainName == 'domain') {
+      throw new EDNetException('domain cannot be the domain name');
+    }
+
+    for (var i = 4; i < args.length; i++) {
+      modelName = args[i].toLowerCase();
+      if (modelName == 'model') {
+        throw new EDNetException('model cannot be the model name');
+      }
+      libraryName = '${domainName}_${modelName}';
+      displayYaml(domain: domainName, model: modelName, dir: args[1]);
+      createDomainModelFromYaml(
+        dir: args[1],
+        domain: domainName,
+        model: modelName,
+      ); // project path as argument
+      genProject(args[0], outputDir);
+    }
+  } else if (args.length == 4 &&
+      (args[0] == '--genall' || args[0] == '--gengen')) {
     domainName = args[2];
     modelName = args[3];
     domainName = domainName.toLowerCase();
@@ -195,4 +238,79 @@ void main(List<String> args) {
   } else {
     print('arguments are not entered properly in Run/Manage Launches of IDE');
   }
+}
+
+void renderYaml(dynamic yamlString, String outputTemplate) {
+  if (yamlString == null || yamlString.length == 0) {
+    return;
+  }
+  final yaml = loadYaml(yamlString);
+  final concepts = yaml['concepts'];
+  for (final concept in concepts) {
+    final conceptName = concept['name'];
+    print(outputTemplate
+        .replaceAll('{conceptName}', conceptName)
+        .replaceAll('{attributeName}', '')
+        .replaceAll('{relationName}', ''));
+
+    final attributes = concept['attributes'] ?? [];
+    for (final attribute in attributes) {
+      final attributeName = attribute['name'];
+      print(outputTemplate
+          .replaceAll('{conceptName}', conceptName)
+          .replaceAll('{attributeName}', attributeName)
+          .replaceAll('{relationName}', ''));
+    }
+
+    final relations = yaml['relations'];
+    for (final relation in relations) {
+      final from = relation['from'];
+      final to = relation['to'];
+      final fromToName = relation['fromToName'];
+      final toFromName = relation['toFromName'];
+      if (from == conceptName) {
+        final relationName = '$fromToName $to';
+        print(outputTemplate
+            .replaceAll('{conceptName}', conceptName)
+            .replaceAll('{attributeName}', '')
+            .replaceAll('{relationName}', relationName));
+      }
+      if (to == conceptName) {
+        final relationName = '$toFromName $from';
+        print(outputTemplate
+            .replaceAll('{conceptName}', conceptName)
+            .replaceAll('{attributeName}', '')
+            .replaceAll('{relationName}', relationName));
+      }
+    }
+  }
+}
+
+String loadYamlFile({
+  required String domain,
+  required String model,
+  required String dir,
+}) {
+  var yamlFile = File("$dir/$domain/${model}/$model.yaml");
+  return yamlFile.readAsStringSync();
+}
+
+void displayYaml({
+  required String domain,
+  required String model,
+  required String dir,
+}) {
+  final yaml = loadYamlFile(
+    domain: domain,
+    model: model,
+    dir: dir,
+  );
+
+  final outputTemplate = '''
+|  Concept: {conceptName}
+|    Attribute: {attributeName}
+|    Relation: {relationName}
+''';
+
+  renderYaml(yaml, outputTemplate);
 }
