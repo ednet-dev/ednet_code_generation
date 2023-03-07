@@ -4,8 +4,11 @@ import 'dart:io';
 import 'package:ednet_core/ednet_core.dart';
 
 part 'doc_gen.dart';
+
 part 'lib_gen.dart';
+
 part 'test_gen.dart';
+
 part 'web_gen.dart';
 
 late String libraryName;
@@ -79,7 +82,8 @@ void genReadme(File file) {
   text = '${text}\n';
   text = '${text}## Description: \n';
   text = '${text}${domainName}_${modelName} project uses \n';
-  text = '${text}[EDNetCore](https://github.com/ednet-dev/ednet_core) for the model.';
+  text =
+      '${text}[EDNetCore](https://github.com/ednet-dev/ednet_core) for the model.';
   addText(file, text);
 }
 
@@ -107,7 +111,7 @@ dependencies:
 */
 
 void genPubspec(File file) {
-  var text = '''
+  var text = """
 name: ${domainName}_${modelName}
 version: 0.0.1
 
@@ -120,14 +124,15 @@ environment:
   
 dependencies:
   ednet_core:
-    path: ../../../packages/ednet_core
+    # path: ../../../packages/ednet_core
+    path: ../../../ednet/libs/cms/packages/ednet_core
   ednet_core_default_app:
-    path: ../../../../experiments/dartling/ednet_core_default_app
+    # path: ../../../../experiments/dartling/ednet_core_default_app
+    path: ../../../ednet/libs/experiments/ednet_core_default_app
   
-  ''';
+  """;
   addText(file, text);
 }
-
 
 void genProject(String gen, String projectPath) {
   if (gen == '--genall') {
@@ -158,8 +163,8 @@ void createDomainModel(String projectPath) {
   } else {
     ednetCoreRepository = new CoreRepository();
     ednetCoreDomain = new Domain(firstLetterToUpper(domainName));
-    ednetCoreModel = fromJsonToModel(modelJson, ednetCoreDomain, 
-        firstLetterToUpper(modelName));
+    ednetCoreModel = fromJsonToModel(
+        modelJson, ednetCoreDomain, firstLetterToUpper(modelName));
     ednetCoreRepository.domains.add(ednetCoreDomain);
   }
 }
@@ -173,7 +178,7 @@ void main(List<String> args) {
   if (args.length == 4 && (args[0] == '--genall' || args[0] == '--gengen')) {
     domainName = args[2];
     modelName = args[3];
-    domainName =  domainName.toLowerCase();
+    domainName = domainName.toLowerCase();
     modelName = modelName.toLowerCase();
     if (domainName == modelName) {
       throw new EDNetException('domain and model names must be different');
