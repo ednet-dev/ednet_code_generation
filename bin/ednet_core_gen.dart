@@ -128,7 +128,7 @@ environment:
   
 dependencies:
   ednet_core:
-    path: ../../../packages/ednet_core
+    path: ../../../packages/core
   ednet_core_default_app:
     path: ../../../../experiments/dartling/ednet_core_default_app
   
