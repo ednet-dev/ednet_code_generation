@@ -1,4 +1,4 @@
-## Version history of [EDNetCoreGen](https://github.com/ednet-dev/ednet_core_gen)
+## Version history of [EDNetCoreGen](https://github.com/ednet-dev/core_generation)
 
 based on [Semantic Versioning](http://semver.org/)
 
