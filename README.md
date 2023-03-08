@@ -21,7 +21,7 @@ Example:
 or
 
 --genall /home/dr/dart/demo_projects demo projects
---genall /home/dzenanr/dart/model/category_links category links
+--genall /home/johns/dart/model/category_links category links
 
 By running the main function in the bin/ednet_core_gen.dart file,
 a project, with its demo domain and projects model, 

@@ -38,7 +38,7 @@ void genDomainModelWebHtml(File file) {
           <img src="https://dl.dropbox.com/u/161496/dart/img/ondart3.png"/>
         </a>
         &nbsp;
-        <a class="button" href="http://dzenanr.github.io/">
+        <a class="button" href="http://johns.github.io/">
           On Dart Blog
         </a>
       </footer>

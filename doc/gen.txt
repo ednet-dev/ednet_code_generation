@@ -35,7 +35,7 @@ In the Script arguments enter the following four arguments:
 --genall C:\dart\model\social_blogging social blogging
 --genall C:\Users\ridjanod.FSA-RIDJANOD-2\dart\apps\social_blogging\spirals\social_blogging_00 social blogging
 
---genall /home/dzenanr/dart/model/social_blogging social blogging
+--genall /home/johns/dart/model/social_blogging social blogging
 
 where the four arguments are:
 --genall projectpath domain model

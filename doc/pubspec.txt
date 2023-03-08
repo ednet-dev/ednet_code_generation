@@ -34,7 +34,7 @@ dependencies:
 
 dependencies:
   ednet_core:
-    path: /home/dzenanr/dart/model/EDNetCore
+    path: /home/johns/dart/model/EDNetCore
 
 -----------------------------------------------------------------
     
