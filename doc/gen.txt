@@ -33,7 +33,7 @@ Select the ednet_core_gen.dart command-line launch.
 In the Script arguments enter the following four arguments:
 
 --genall C:\dart\model\social_blogging social blogging
---genall C:\Users\ridjanod.FSA-RIDJANOD-2\dart\apps\social_blogging\spirals\social_blogging_00 social blogging
+--genall C:\Users\johns.FSA-johns-2\dart\apps\social_blogging\spirals\social_blogging_00 social blogging
 
 --genall /home/johns/dart/model/social_blogging social blogging
 

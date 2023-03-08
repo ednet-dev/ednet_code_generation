@@ -16,7 +16,7 @@ with the bin/ednet_core_gen.dart Dart script:
 
 Example:
 
---genall C:/Users/ridjanod/dart/demo_projects demo projects
+--genall C:/Users/johns/dart/demo_projects demo projects
 
 or
 

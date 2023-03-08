@@ -4,5 +4,7 @@ build
 packages
 pubspec.lock
 *~
+.dart_tool
+ednet_core_gen.iml
 
   

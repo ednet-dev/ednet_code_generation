@@ -25,7 +25,7 @@ dependencies:
   browser: '>=0.10.0 <0.11.0'
   ednet_core: ^0.0.1+2
   ednet_core_default_app:
-    path: 'C:\\Users\\ridjanod.FSA-RIDJANOD-2\\dart\\model\\ednet_core_default_app'
+    path: 'C:\\Users\\johns.FSA-johns-2\\dart\\model\\ednet_core_default_app'
 
 dependencies:
   browser: any
