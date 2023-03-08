@@ -87,7 +87,7 @@ void genReadme(File file) {
   text = '${text}## Description: \n';
   text = '${text}${domainName}_${modelName} project uses \n';
   text =
-      '${text}[EDNetCore](https://github.com/ednet-dev/ednet_core) for the model.';
+      '${text}[EDNetCore](https://github.com/context-dev/ednet_core) for the model.';
   addText(file, text);
 }
 
@@ -121,7 +121,7 @@ version: 0.0.1
 
 description: ${domainName}_${modelName} application that uses ednet_core for its model.
 
-homepage: https://ednet.dev/
+homepage: https://context.dev/
 
 environment:
   sdk: '>=2.18.6 <3.0.0'

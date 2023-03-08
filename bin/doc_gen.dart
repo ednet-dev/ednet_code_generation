@@ -17,9 +17,9 @@ dependencies:
 dependencies:
   browser: '>=0.10.0 <0.11.0'
   ednet_core:
-    git: 'https://github.com/ednet-dev/ednet_core.git'
+    git: 'https://github.com/context-dev/ednet_core.git'
   ednet_core_default_app:
-    git: 'https://github.com/ednet-dev/ednet_core_default_app.git'
+    git: 'https://github.com/context-dev/ednet_core_default_app.git'
 
 dependencies:
   browser: '>=0.10.0 <0.11.0'
@@ -84,7 +84,7 @@ Next steps:
   git status
   git add .
   git commit -m 'initial version'
-  git remote add origin https://github.com/ednet-dev/${domainName}_${modelName}.git
+  git remote add origin https://github.com/context-dev/${domainName}_${modelName}.git
   git push -u origin master
 
 -------------------------------------------------------------------------------
@@ -94,14 +94,14 @@ Git with Git Bash
 Clone a remote repository into a local repository.
 
 cd git/dart
-git clone https://github.com/ednet-dev/${domainName}_${modelName}.git
+git clone https://github.com/context-dev/${domainName}_${modelName}.git
 cd ${domainName}_${modelName}
 
 Read+Write:
-https://github.com/ednet-dev/${domainName}_${modelName}.git
+https://github.com/context-dev/${domainName}_${modelName}.git
 
 Read only:
-git://github.com/ednet-dev/${domainName}_${modelName}.git
+git://github.com/context-dev/${domainName}_${modelName}.git
 
 Get the latest changes from the remote repository
 
