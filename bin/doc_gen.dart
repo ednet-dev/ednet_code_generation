@@ -23,15 +23,13 @@ dependencies:
 
 dependencies:
   browser: '>=0.10.0 <0.11.0'
-  ednet_core:
-    path: 'C:\\Users\\ridjanod.FSA-RIDJANOD-2\\dart\\model\\ednet_core'
+  ednet_core: ^0.0.1+2
   ednet_core_default_app:
     path: 'C:\\Users\\ridjanod.FSA-RIDJANOD-2\\dart\\model\\ednet_core_default_app'
 
 dependencies:
   browser: any
-  ednet_core:
-    path: /home/johns/dart/model/ednet_core
+  ednet_core: ^0.0.1+2
   ednet_core_default_app:
     path: /home/johns/dart/model/ednet_core_default_app
   ''';

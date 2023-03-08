@@ -127,8 +127,7 @@ environment:
   sdk: '>=2.18.6 <3.0.0'
   
 dependencies:
-  ednet_core:
-    path: ../../../packages/core
+  ednet_core: ^0.0.1+2
   ednet_core_default_app:
     path: ../../../../experiments/dartling/ednet_core_default_app
   

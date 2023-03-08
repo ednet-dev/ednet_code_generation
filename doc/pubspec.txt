@@ -29,12 +29,7 @@ dependencies:
   ednet_core: any
 
 dependencies:
-  ednet_core:
-    path: 'C:\Users\ridjanod.FSA-RIDJANOD-2\dart\model\EDNetCore'
-
-dependencies:
-  ednet_core:
-    path: /home/johns/dart/model/EDNetCore
+  ednet_core: ^0.0.1+2
 
 -----------------------------------------------------------------
     
