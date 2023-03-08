@@ -129,7 +129,7 @@ environment:
 dependencies:
   ednet_core: ^0.0.1+2
   ednet_core_default_app:
-    path: ../../../../experiments/dartling/ednet_core_default_app
+    path: ../../../../experiments/ednet_core_default_app
   
   ''';
   addText(file, text);
