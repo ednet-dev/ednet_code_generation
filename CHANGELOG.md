@@ -2,6 +2,13 @@
 
 based on [Semantic Versioning](http://semver.org/)
 
+0.1.0 2023-05-01
++ refactor to modern Dart
++ integrate in ednet cms monorepo
++ reset version
+
+## Legacy
+
 *2.0.2* 2015-05-01
 
 + add void where missing
